@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local environment files
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# Database (keep your local DB local)
+db.sqlite3
+*.db
+
+# Media and Static
+/media/
+# Only ignore static if you want to keep the collected files out of git
+/static/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
