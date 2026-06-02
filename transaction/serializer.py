@@ -31,6 +31,17 @@ class TransactionSerializer(serializers.ModelSerializer):
             "transaction_date",
         ]
 
+    def validate_amount(self, amount):
+        if amount < 0:
+            raise serializers.ValidationError("Amount cannot be negative")
+        
+        max_limit = max([x.limit for x in self.categories])
+
+        if amount > max_limit:
+            raise serializers.ValidationError("Cannot exceed set limit")
+        
+        return amount
+
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
